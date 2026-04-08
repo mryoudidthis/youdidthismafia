@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouDidThisMafia - Premium Sports Picks That Print Money</title>
+    <meta name="description" content="Join The Mafia. Premium cross-sport parlays, live game alerts, and a community built to make you profitable. Only $5/month.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F0D060;
+            --gold-dark: #B8960C;
+            --black: #0A0A0A;
+            --black-card: #111111;
+            --black-light: #1A1A1A;
+            --white: #FFFFFF;
+            --gray: #888888;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            background: radial-gradient(ellipse at center top, rgba(212,175,55,0.15) 0%, transparent 60%),
+                        linear-gradient(180deg, #0A0A0A 0%, #111 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="g" patternUnits="userSpaceOnUse" width="20" height="20"><rect width="20" height="20" fill="none"/><circle cx="10" cy="10" r="0.5" fill="rgba(212,175,55,0.08)"/></pattern></defs><rect fill="url(%23g)" width="100" height="100"/></svg>');
+            pointer-events: none;
+        }
+
+        .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            height: 120px;
+            filter: drop-shadow(0 0 30px rgba(212,175,55,0.4));
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 8px 24px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(42px, 8vw, 80px);
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #FFFFFF 30%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--gray);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero p strong { color: var(--gold); }
+
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 18px 48px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(212,175,55,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(212,175,55,0.5);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--gold);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 14px 36px;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212,175,55,0.1);
+            transform: translateY(-1px);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* SECTION STYLING */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        /* WHAT YOU GET */
+        .features {
+            background: var(--black-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--black-card);
+            border: 1px solid rgba(212,175,55,0.15);
+            border-radius: 16px;
+            padding: 36px 28px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(212,175,55,0.15);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            background: var(--black);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            min-width: 220px;
+            max-width: 280px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* SOCIAL PROOF */
+        .proof {
+            background: var(--black-light);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--black-card);
+            border: 1px solid rgba(212,175,55,0.1);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gold);
+        }
+
+        /* PRICING */
+        .pricing {
+            background: var(--black);
+            text-align: center;
+        }
+
+        .price-card {
+            max-width: 480px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #1A1A1A 0%, #111 100%);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 48px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
+        }
+
+        .price-popular {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .price-amount {
+            font-family: 'Oswald', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .price-amount span {
+            font-size: 24px;
+            color: var(--gray);
+        }
+
+        .price-period {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 36px;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 15px;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .price-features li::before {
+            content: '\2713';
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* EMAIL SIGNUP */
+        .signup {
+            background: linear-gradient(180deg, var(--black-light) 0%, var(--black) 100%);
+            text-align: center;
+        }
+
+        .signup-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--black-card);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 20px;
+            padding: 48px 36px;
+        }
+
+        .signup-box h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .signup-box p {
+            color: var(--gray);
+            margin-bottom: 28px;
+            font-size: 15px;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .signup-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 16px 20px;
+            background: var(--black-light);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .signup-form input:focus {
+            border-color: var(--gold);
+        }
+
+        .signup-form input::placeholder {
+            color: #555;
+        }
+
+        .signup-form button {
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--black);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .signup-form button:hover {
+            box-shadow: 0 4px 20px rgba(212,175,55,0.4);
+            transform: translateY(-1px);
+        }
+
+        .signup-note {
+            font-size: 12px;
+            color: #555;
+            margin-top: 16px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(212,175,55,0.1);
+        }
+
+        footer .brand {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #555;
+            font-size: 13px;
+        }
+
+        footer .social-links {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        footer .social-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover { color: var(--gold); }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-content { animation: fadeInUp 1s ease; }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 30px rgba(212,175,55,0.3); }
+            50% { box-shadow: 0 4px 40px rgba(212,175,55,0.6); }
+        }
+
+        .btn-primary { animation: pulse 2s ease-in-out infinite; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 20px; }
+            .hero-stats { gap: 24px; }
+            .stat-number { font-size: 28px; }
+            section { padding: 60px 16px; }
+            .price-card { padding: 36px 24px; }
+            .signup-box { padding: 36px 20px; }
+            .steps { gap: 30px; }
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="logo-container">
+            <svg width="140" height="60" viewBox="0 0 140 60" fill="none" xmlns="https://www.w3.org/2000/svg">
+                <text x="70" y="38" text-anchor="middle" font-family="Oswald, sans-serif" font-weight="700" font-size="22" fill="#D4AF37" letter-spacing="2">YOUDIDTHIS</text>
+                <text x="70" y="55" text-anchor="middle" font-family="Oswald, sans-serif" font-weight="700" font-size="16" fill="#FFFFFF" letter-spacing="4">MAFIA</text>
+                <line x1="15" y1="42" x2="55" y2="42" stroke="#D4AF37" stroke-width="1"/>
+                <line x1="85" y1="42" x2="125" y2="42" stroke="#D4AF37" stroke-width="1"/>
+            </svg>
+        </div>
+        <div class="hero-badge">Exclusive VIP Community</div>
+        <h1>Smart Money.<br>Real Picks.<br>The Mafia Eats.</h1>
+        <p>Join the most calculated sports betting community in the game. <strong>Cross-sport parlays, live alerts, transparent tracking</strong> — all for the price of one bad bet. We don't guess. We calculate.</p>
+        <div class="cta-group">
+            <a href="https://whop.com/youdidthismafia/bankrollbrothers-vip/" class="btn-primary" target="_blank">Join The Mafia — $5/mo</a>
+            <a href="#signup" class="btn-secondary">Get Free Picks First</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Sports Covered</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Live Alerts</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$5</div>
+                <div class="stat-label">Per Month</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Transparent</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="features">
+    <h2 class="section-title reveal">What You Get Inside The Mafia</h2>
+    <p class="section-subtitle reveal">Everything you need to bet smarter, not harder. This isn't a tip sheet — it's a full operation.</p>
+    <div class="features-grid">
+        <div class="feature-card reveal">
+            <div class="feature-icon">&#127942;</div>
+            <h3>Expert Cross-Sport Parlays</h3>
+            <p>NBA, NFL, MLB, NHL, UFC — we cover every major sport. Daily curated plays with confidence ratings so you know exactly where to put your money.</p>
+        </div>
+        <div class="feature-card reveal">
+            <div class="feature-icon">&#9889;</div>
+            <h3>Live Game Alerts</h3>
+            <p>When odds shift mid-game, you'll know before the public does. Real-time alerts on line movements, injuries, and in-game snipes.</p>
+        </div>
+        <div class="feature-card reveal">
+            <div class="feature-icon">&#128200;</div>
+            <h3>Full Transparency Tracker</h3>
+            <p>Every single play logged with W/L results, ROI tracking, and public records. No hiding losses. No fake screenshots. Just receipts.</p>
+        </div>
+        <div class="feature-card reveal">
+            <div class="feature-icon">&#129309;</div>
+            <h3>The Community</h3>
+            <p>A private Discord of like-minded bettors sharing insights, celebrating wins, and building bankrolls together. This is family — The Mafia.</p>
+        </div>
+        <div class="feature-card reveal">
+            <div class="feature-icon">&#127891;</div>
+            <h3>Sports Betting Education</h3>
+            <p>Learn bankroll management, how to read lines, when to fade the public, and the strategies that separate pros from casual bettors.</p>
+        </div>
+        <div class="feature-card reveal">
+            <div class="feature-icon">&#128176;</div>
+            <h3>Built to Make You Profitable</h3>
+            <p>This isn't gambling advice — it's a system. Calculated picks, disciplined strategy, and a track record to back it all up.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+    <h2 class="section-title reveal">How It Works</h2>
+    <p class="section-subtitle reveal">From signup to cashing out — it takes 3 minutes to join the winning side.</p>
+    <div class="steps">
+        <div class="step reveal">
+            <div class="step-number">1</div>
+            <h3>Join on Whop</h3>
+            <p>Sign up for $5/month. Cancel anytime. No contracts. No commitment traps.</p>
+        </div>
+        <div class="step reveal">
+            <div class="step-number">2</div>
+            <h3>Get Discord Access</h3>
+            <p>Instant access to our private VIP Discord server with all channels, alerts, and community.</p>
+        </div>
+        <div class="step reveal">
+            <div class="step-number">3</div>
+            <h3>Start Cashing</h3>
+            <p>Follow the plays, set your alerts, and watch your bankroll grow with The Mafia.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof">
+    <h2 class="section-title reveal">The Mafia Is Eating</h2>
+    <p class="section-subtitle reveal">Don't take our word for it. Here's what members are saying.</p>
+    <div class="testimonials">
+        <div class="testimonial reveal">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"I was down bad before I found this group. The transparency alone is worth more than $5. Actually seeing the track record before I bet changed everything."</p>
+            <div class="testimonial-author">— VIP Member since Day 1</div>
+        </div>
+        <div class="testimonial reveal">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"Cross-sport parlays were always hit or miss for me. The research that goes into these picks is insane. Cashed my first parlay within 48 hours of joining."</p>
+            <div class="testimonial-author">— New Member, 1st Week</div>
+        </div>
+        <div class="testimonial reveal">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>"The community is what separates this from every other picks service. It's not just picks — it's the culture, the education, the family. The Mafia is real."</p>
+            <div class="testimonial-author">— Active Mafia Member</div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+    <h2 class="section-title reveal">One Price. Full Access. No Games.</h2>
+    <p class="section-subtitle reveal">Less than the cost of one losing bet. Think about that.</p>
+    <div class="price-card reveal">
+        <div class="price-popular">Most Popular</div>
+        <div class="price-amount">$5<span>/mo</span></div>
+        <div class="price-period">Cancel anytime. No hidden fees.</div>
+        <ul class="price-features">
+            <li>All daily cross-sport picks & parlays</li>
+            <li>Real-time live game alerts & line movements</li>
+            <li>Private VIP Discord community access</li>
+            <li>Full W/L transparency tracker</li>
+            <li>Sports betting education & strategy</li>
+            <li>NBA, NFL, MLB, NHL, UFC coverage</li>
+            <li>Pre-game analysis & post-game recaps</li>
+            <li>Direct access to the founder</li>
+        </ul>
+        <a href="https://whop.com/youdidthismafia/bankrollbrothers-vip/" class="btn-primary" target="_blank" style="width:100%;justify-content:center;">Join The Mafia Now</a>
+    </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<section class="signup" id="signup">
+    <div class="signup-box reveal">
+        <h3>Not Ready Yet? Get Free Picks First.</h3>
+        <p>Drop your email and we'll send you sample picks, win recaps, and a taste of what The Mafia delivers daily. No spam. Just value.</p>
+        <form class="signup-form" id="emailForm" onsubmit="handleSubmit(event)">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your best email" required>
+            <button type="submit">Get Free Picks</button>
+        </form>
+        <p class="signup-note">We respect your inbox. Unsubscribe anytime.</p>
+        <div id="formSuccess" style="display:none;margin-top:20px;padding:16px;background:rgba(212,175,55,0.15);border:1px solid var(--gold);border-radius:8px;">
+            <p style="color:var(--gold);font-weight:600;margin:0;">You're in. Check your email for your first free picks from The Mafia.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="text-align:center;padding:60px 20px;background:radial-gradient(ellipse at center, rgba(212,175,55,0.1) 0%, transparent 70%);">
+    <h2 class="section-title reveal" style="margin-bottom:20px;">The Mafia Is Waiting.</h2>
+    <p style="color:var(--gray);max-width:500px;margin:0 auto 30px;font-size:16px;">Every day you wait is money left on the table. $5 is all that separates you from the winning side.</p>
+    <a href="https://whop.com/youdidthismafia/bankrollbrothers-vip/" class="btn-primary" target="_blank">Join Now — $5/mo</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="brand">YOUDIDTHISMAFIA</div>
+    <p>&copy; 2026 YouDidThisMafia. All rights reserved.</p>
+    <div class="social-links">
+        <a href="https://twitter.com/YouDidThisMafia" target="_blank">Twitter / X</a>
+        <a href="https://whop.com/youdidthismafia/bankrollbrothers-vip/" target="_blank">Whop VIP</a>
+    </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Email form handler
+function handleSubmit(e) {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+
+    // Store locally and redirect to Google Form
+    const formUrl = 'https://docs.google.com/forms/d/1hPxCiF0zKXqYaH_ANXKa-695Lbsvo5PqgXlmV8NoZYE/viewform';
+
+    // Show success message
+    document.getElementById('emailForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+
+    // Send data to Google Form via prefilled URL (opens in background)
+    const img = new Image();
+    img.src = formUrl + '?usp=pp_url&entry.name=' + encodeURIComponent(name) + '&entry.email=' + encodeURIComponent(email);
+
+    // Also store in localStorage as backup
+    const leads = JSON.parse(localStorage.getItem('mafia_leads') || '[]');
+    leads.push({ name, email, date: new Date().toISOString() });
+    localStorage.setItem('mafia_leads', JSON.stringify(leads));
+}
+</script>
+
+</body>
+</html>
